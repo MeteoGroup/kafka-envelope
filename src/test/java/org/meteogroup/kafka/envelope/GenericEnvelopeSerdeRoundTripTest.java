@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.entry;
 public class GenericEnvelopeSerdeRoundTripTest {
 
   GenericEnvelopeSerializer<String> serializer;
-  private GenericEnvelopeDeserializer<String> deserializer;
+  GenericEnvelopeDeserializer<String> deserializer;
 
   @BeforeMethod
   public void setUp() throws Exception {
