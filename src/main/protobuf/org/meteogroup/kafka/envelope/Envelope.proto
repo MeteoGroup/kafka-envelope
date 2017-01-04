@@ -1,0 +1,9 @@
+syntax = "proto3";
+package org.meteogroup.kafka.envelope;
+
+option java_outer_classname = "EnvelopeProtoBuf";
+
+message Envelope {
+    map<string, string> headers = 1;
+    bytes payload = 2;
+};
