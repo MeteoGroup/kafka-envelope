@@ -53,11 +53,11 @@ public class RoundTripIntegrationTest {
 
   @Test
   public void roundtrip() throws Exception {
-    RecordMetadata send = producer.send(new ProducerRecord<>(TOPIC, new Envelope<String>(singletonMap("header", "value"), "payload"))).get();
+    RecordMetadata send = producer.send(new ProducerRecord<>(TOPIC, new Envelope<>(singletonMap("header", "value"), "payload"))).get();
 
     consumer.subscribe(singleton(TOPIC));
 
-    ConsumerRecords<String, Envelope<String>> records = consumer.poll(1000);
+    ConsumerRecords<String, Envelope<String>> records = consumer.poll(2000);
 
     assertThat(records).hasSize(1);
     ConsumerRecord<String, Envelope<String>> record = records.iterator().next();
