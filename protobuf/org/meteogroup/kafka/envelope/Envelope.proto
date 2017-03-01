@@ -1,6 +1,7 @@
 syntax = "proto3";
 package org.meteogroup.kafka.envelope;
 
+option go_package = "kafka_envelope";
 option java_outer_classname = "EnvelopeProtoBuf";
 
 message Envelope {
